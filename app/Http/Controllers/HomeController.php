@@ -30,6 +30,9 @@ class HomeController extends Controller
 
         $banner_ads = PostItem::take(5)->get();
 
+        // $data_array_recent = array('key' => 'recent_post_item', 'name' => 'Recent Products', 'data' => $recentPostItem);
+        // $data_array_mostly_viewed = array('key' => 'recent_post_item', 'name' => 'Recent Products', 'data' => $recentPostItem);
+
         if (\Request::is('api/*')){
             return response()->json([
                 'status' => true,
@@ -38,10 +41,10 @@ class HomeController extends Controller
                 'data_count' => 8,
                 'data' => array(
 
-                    'banner' => $banner,
-                    'recent_products' => $recentProducts,
+                    'banner' => $banner_ads,
+                    'recent_products' => $recentPostItem,
                     'mostly_viewed' => $mostlyViewed,
-                    'banner_ads' => $banner,
+                    'banner_ads' => $banner_ads,
                     'expiring_soon' => $expiringSoon,
 
                     'near_you' => $near_you,

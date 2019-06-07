@@ -42,22 +42,22 @@ class PostItemType
         // 'car', 'properties', 'furniture', 'job',
         // 'electronices_and_applicance', 'mobile',
         // 'bikes', 'book_sports_hobbies', 'fashion', 'pets', 'service'
-        if ($productType == "apartment"){
+        if ($postItemType == "apartment"){
             return $postItem->where('type', '=', 'apartment');
         }
-        if ($productType == "flat"){
+        if ($postItemType == "flat"){
             return $postItem->where('type', '=', 'flat');
         }
-        if ($productType == "room"){
+        if ($postItemType == "room"){
             return $postItem->where('type', '=', 'room');
         }
-        if ($productType == "hostel"){
+        if ($postItemType == "hostel"){
             return $postItem->where('type', '=', 'hostel');
         }
-        if ($productType == "paying_guest"){
+        if ($postItemType == "paying_guest"){
             return $postItem->where('type', '=', 'paying_guest');
         }
-        if ($productType == "hotel"){
+        if ($postItemType == "hotel"){
             return $product->where('type', '=', 'hotel');
         }
     }

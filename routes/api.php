@@ -18,3 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/home', 'HomeController@index');
+Route::get('/post_item/{postItemType}', 'PostItemController@getPostItems');

@@ -15,7 +15,8 @@ class CreatePostItemsTable extends Migration
     {
         Schema::create('post_items', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('user_id');
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('title');
             $table->string('images');
             $table->integer('price');
@@ -28,9 +29,9 @@ class CreatePostItemsTable extends Migration
             $table->integer('number_of_wash_room');
             $table->integer('total_area');
             $table->integer('floor');
-            $table->json('amenities');
+            $table->string('amenities');
             $table->mediumText('description');
-            $table->double('logitude');
+            $table->double('longitude');
             $table->double('latitude');
             $table->boolean('is_sold');
             $table->timestamps();
